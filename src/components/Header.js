@@ -1,4 +1,3 @@
-import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 
@@ -10,8 +9,8 @@ const Header = ({
 }) => {
   return (
     <header className="bg-gray-800 text-white py-4">
-      <div className="container mx-auto flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Product Catalog</h1>
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+        <h1 className="text-2xl font-bold mb-2 lg:mb-0">Product Catalog</h1>
         <div className="flex items-center space-x-4">
           <input
             type="text"
@@ -27,21 +26,21 @@ const Header = ({
             <option value="asc">Price: Low to High</option>
             <option value="desc">Price: High to Low</option>
           </select>
-          {/* <Link href="/cart"> */}
-          <div className="relative">
-            <FaShoppingCart
-              onClick={handleCartClick}
-              className="text-white cursor-pointer w-6 h-6"
-            />
+          <Link href="/cart" prefetch={false}>
+            <div className="relative">
+              <FaShoppingCart
+                onClick={handleCartClick}
+                className="text-white cursor-pointer w-6 h-6"
+              />
 
-            {cartItemCount > 0 && (
-              <div className="absolute top-0 right-0 bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-xs">
-                {cartItemCount}
-              </div>
-            )}
-          </div>
-          cart
-          {/* </Link> */}
+              {cartItemCount > 0 && (
+                <div className="absolute top-0 right-0 bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                  {cartItemCount}
+                </div>
+              )}
+            </div>
+            <span className="hidden lg:inline-block">cart</span>
+          </Link>
         </div>
       </div>
     </header>
