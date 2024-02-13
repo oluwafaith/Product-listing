@@ -8,7 +8,7 @@ const Header = ({
   cartItemCount,
 }) => {
   return (
-    <header className="bg-gray-800 text-white py-4">
+    <header className="bg-gray-800 text-white py-4 sticky top-0 z-10">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
         <h1 className="text-2xl font-bold mb-2 lg:mb-0">Product Catalog</h1>
         <div className="flex items-center space-x-4">

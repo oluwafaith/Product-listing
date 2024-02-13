@@ -14,6 +14,7 @@ const Home = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItemCount, setCartItemCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+
   const STORAGE_KEY = "cartItems";
 
   useEffect(() => {
